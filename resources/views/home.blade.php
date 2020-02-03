@@ -8,14 +8,32 @@
 
         </div>
         <div class="col-9 pt-2">
-            <div><h1>instaClone</h1></div>
+            <div><h1>
+                {{$user->username}}
+            </h1></div>
             <div class="d-flex">
-                <div class="p-2"><strong>151</strong>posts</div>
-                <div class="p-2"><strong>10k</strong>follow</div>
-                <div class="p-2"><strong>212</strong>following</div>
+                <div class="p-4"><strong>151</strong>posts</div>
+                <div class="p-4"><strong>10k</strong>follow</div>
+                <div class="p-4"><strong>212</strong>following</div>
+            </div>
+                <div>bla bla bla</div>
+                <div class="p-4">instaClone.com</div>
+            
+        <div class="row pt-5">
+            <div class="col-4">
+                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
+            </div>
+            <div class="col-4">
+                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
+            </div>
+            <div class="col-4">
+                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
             </div>
             
 
+
+
+        </div>
 
         </div>    
 
