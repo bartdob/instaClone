@@ -11,7 +11,7 @@
             <div><h1>
                 {{$user->username}}
             </h1></div>
-            <div class="text-right"><a href="#"> Add new post </a></div>
+            <div class="text-right"><a href="/p/create"> Add new post </a></div>
             <div class="d-flex">
                 <div class="p-4"><strong>151</strong>posts</div>
                 <div class="p-4"><strong>10k</strong>follow</div>
@@ -22,16 +22,12 @@
                 <div> <a href='#'>{{$user->profile->url}}</a></div>
             
         <div class="row pt-5">
-            <div class="col-4">
-                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
-            </div>
-            <div class="col-4">
-                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
-            </div>
-            <div class="col-4">
-                <img class="w-100" src="https://i.pinimg.com/236x/60/cf/db/60cfdb96744a9cc380f96b23b1d7550d--cute-instagram-photo-ideas-cute-pictures-for-instagram.jpg">
-            </div>
-            
+            @foreach($user->posts as $post)
+                <div class="col-4 p-2">
+                    <img src="/storage/{{ $post->image }}" class="w-100">
+                </div>
+
+            @endforeach
 
 
 
