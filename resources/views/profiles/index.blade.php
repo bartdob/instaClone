@@ -9,17 +9,27 @@
         </div>
         <div class="col-9 pt-2">
             <div><h1>
-                {{$user->username}}
+                {{$user ->username ?? ''}}
             </h1></div>
-            <div class="text-right"><a href="/p/create"> Add new post </a></div>
+            
+            @can('update', $user->profile)
+                <div class="text-right"><a href="/p/create"> Add new post </a></div>
+            @endcan
+
+            
+            
+            @can('update', $user->profile)
+                <div class="text-left"><a href="/profile/{{ $user->id }}/edit">Edit profile</a></div>
+            @endcan
+
             <div class="d-flex">
-                <div class="p-4"><strong>{{ $user->posts->count()}}</strong> posts</div>
+                <div class="p-4"><strong>{{$user->posts->count() ?? ''}}</strong> posts</div>
                 <div class="p-4"><strong>10k</strong>follow</div>
                 <div class="p-4"><strong>212</strong>following</div>
             </div>
-                <div class="p-4">{{$user->profile->title}}</div>
-                <div class="p-4">{{$user->profile->desc}}</div>
-                <div> <a href='#'>{{$user->profile->url}}</a></div>
+                <div class="p-4">{{$user->profile->title ?? ''}}</div>
+                <div class="p-4">{{$user->profile->desc ?? ''}}</div>
+                <div> <a href='#'>{{$user->profile->url ?? ''}}</a></div>
             
         <div class="row pt-5">
             @foreach($user->posts as $post)

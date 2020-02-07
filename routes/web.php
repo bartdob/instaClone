@@ -15,14 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// important where are the routes, which place... order
+
+
+
 Auth::routes();
 
-Route::get('/p/{post}', 'PostsController@show');
+
 
 Route::get('/p/create', 'PostsController@create');
 
 Route::post('/p', 'PostsController@store');
 
+Route::get('/p/{post}', 'PostsController@show');
+
+
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
+
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 

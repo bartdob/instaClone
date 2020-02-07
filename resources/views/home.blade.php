@@ -9,7 +9,7 @@
         </div>
         <div class="col-9 pt-2">
             <div><h1>
-                {{$user->username}}
+                {{$user->username ?? ''}}
             </h1></div>
             <div class="text-right"><a href="#"> Add new post </a></div>
             <div class="d-flex">
@@ -17,9 +17,9 @@
                 <div class="p-4"><strong>10k</strong>follow</div>
                 <div class="p-4"><strong>212</strong>following</div>
             </div>
-                <div class="p-4">{{$user->profile->title}}</div>
-                <div class="p-4">{{$user->profile->desc}}</div>
-                <div> <a href='#'>{{$user->profile->url}}</a></div>
+                <div class="p-4">{{$user->profile->title ?? ''}}</div>
+                <div class="p-4">{{$user->profile->desc ?? ''}}</div>
+                <div> <a href='#'>{{$user->profile->url ?? ''}}</a></div>
             
         <div class="row pt-5">
             <div class="col-4">
