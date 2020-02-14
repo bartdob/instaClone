@@ -8,9 +8,14 @@
 
         </div>
         <div class="col-9 pt-2">
-            <div><h1>
+            <div class="d-flex"><h1>
                 {{$user ->username ?? ''}}
-            </h1></div>
+            </h1>
+    
+        <follow-button user-id="{{ $user->id }}" ></follow-button> 
+         
+
+        </div>
             
             @can('update', $user->profile)
                 <div class="text-right"><a href="/p/create"> Add new post </a></div>
