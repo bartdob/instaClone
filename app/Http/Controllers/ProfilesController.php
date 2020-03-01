@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -14,11 +16,14 @@ class ProfilesController extends Controller
     	$user = \App\User::findOrFail($user);
         
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
+        $postCount = $user->posts->count();
+
+        $followCount = $user->profile->followers->count();
+
+        $followingCount = $user->following->count();
         
-        return view('profiles.index', [
-        	'user' => $user,
-            'follows' => $follows
-        ]);
+        return view('profiles.index', compact('user', 'follows', 'postCount', 'followCount', 'followingCount'));
     }
 
     public function edit(\App\User $user)
