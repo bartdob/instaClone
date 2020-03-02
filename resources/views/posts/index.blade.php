@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="container">
-    <a href="/profile/{$users_id}">profile</a>
+    <div class="text-right">
+    <button class="btn btn-dark text-right">
+        
+        <a href="/profile/{{$user->id ?? ''}}">profile</a>
+
+    </button>
+    </div>
 <div class="container d-flex">
     @foreach($posts as $post)
         <div class="row">
