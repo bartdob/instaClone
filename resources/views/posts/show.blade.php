@@ -17,7 +17,7 @@
                      <a href="#" class="p-4">Follow</a>
                 </div>
 
-                    {{ $post->caption }}</p>
+                <p> {{ $post->caption }}</p>
             </div>
         </div>
     </div>

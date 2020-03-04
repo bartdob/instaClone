@@ -60,12 +60,12 @@ class PostsController extends Controller
         return view('posts.show', compact('post')); // funcka przekazująca wartości compact
     }
 
-    public function search (Request $request)
+    public function search (Request $request, \App\Post $post)
     {
         $query = $request->input('query');
-        $users = \App\User::where('username', 'like', '%' . $query . '%')->get();
-        $id = \App\User::select('id')->where('username', $query)->get();
-        return view('posts.search-results', compact('users', 'id'));
+        $users = \App\User::where('username', 'like', '%'.$query.'%%')->get();
+        $id = \App\User::select('id')->where('username', $query)->get(); // not used for 
+        return view('posts.search-results', compact('users', 'id', 'post'));
     }
 }
 
