@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 
+use App\User;
+
 use Illuminate\Http\Request;
 
 use Intervention\Image\Facades\Image;
@@ -57,5 +59,15 @@ class PostsController extends Controller
     {
         return view('posts.show', compact('post')); // funcka przekazująca wartości compact
     }
+
+    public function search (Request $request)
+    {
+        $query = $request->input('query');
+        $users = \App\User::where('username', 'like', '%' . $query . '%')->get();
+        $id = \App\User::select('id')->where('username', $query)->get();
+        return view('posts.search-results', compact('users', 'id'));
+    }
 }
+
+
 
