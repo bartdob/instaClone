@@ -4,7 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-2">
-            <img style="height: 100px;" src="https://img.favpng.com/10/15/7/stormtrooper-star-wars-the-clone-wars-clone-trooper-png-favpng-WZHpSypu9n5XvJqNQsK2Dz7km_t.jpg" class="rounded-circle">
+            <!-- <img style="height: 100px;"  -->
+            <!-- <src="https://img.favpng.com/10/15/7/stormtrooper-star-wars-the-clone-wars-clone-trooper-png-favpng-WZHpSypu9n5XvJqNQsK2Dz7km_t.jpg" class="rounded-circle"> -->
+            <img src="/storage/{{$user->profile->image}}" alt="Image not found" class="rounded-circle w-100" onerror="this.src='https://img.favpng.com/10/15/7/stormtrooper-star-wars-the-clone-wars-clone-trooper-png-favpng-WZHpSypu9n5XvJqNQsK2Dz7km_t.jpg';">
 
         </div>
         <div class="col-9 pt-2">
